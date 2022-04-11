@@ -155,6 +155,4 @@ while menu != 5:
        socketclient.close()
        break
 
-   elif menu != 1 and menu != 2 and menu != 3:
-       print("Digite um valor válido!")
    lista.clear()
