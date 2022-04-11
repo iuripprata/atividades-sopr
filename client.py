@@ -72,7 +72,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM KELVIN: %i" % int(temp))
+           print("VALOR EM CELSIUS: %i" % int(temp))
            print('\n')
 
        #FAHRENHEITS → KELVIN
@@ -80,7 +80,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM CELSIUS: %i" % int(temp))
+           print("VALOR EM KELVIN: %i" % int(temp))
            print('\n')
 
 
@@ -107,7 +107,7 @@ while menu != 5:
        if menuC == 1:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
-           print("VALOR EM QUILÔMETROS: %.2f" % float(temp))
+           print("VALOR EM QUILÔMETROS: %.5f" % float(temp))
            print('\n')
 
        #METROS → CENTÍMETROS
@@ -115,7 +115,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM CENTÍMETROS: %.2f" % float(temp))
+           print("VALOR EM CENTÍMETROS: %.5f" % float(temp))
            print('\n')
 
        #QUILÔMETROS → CENTÍMETROS
@@ -123,7 +123,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM CENTÍMETROS: %.2f" % float(temp))
+           print("VALOR EM CENTÍMETROS: %.5f" % float(temp))
            print('\n')
 
        #QUILÔMETROS → METROS
@@ -131,7 +131,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM METROS: %.2f" % float(temp))
+           print("VALOR EM METROS: %.5f" % float(temp))
            print('\n')
 
        #CENTÍMETROS → QUILÔMETROS
@@ -139,7 +139,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM QUILÔMETROS: %.2f" % float(temp))
+           print("VALOR EM QUILÔMETROS: %.5f" % float(temp))
            print('\n')
 
        #CENTÍMETROS → METROS
@@ -147,7 +147,7 @@ while menu != 5:
            temp = socketclient.recv(1024)
            temp = json.loads(temp)
 
-           print("VALOR EM METROS: %.2f" % float(temp))
+           print("VALOR EM METROS: %.5f" % float(temp))
            print('\n')
 
    elif menu == 3:
@@ -155,6 +155,6 @@ while menu != 5:
        socketclient.close()
        break
 
-   else:
+   elif menu != 1 and menu != 2 and menu != 3:
        print("Digite um valor válido!")
    lista.clear()
