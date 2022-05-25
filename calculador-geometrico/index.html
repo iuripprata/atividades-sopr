@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Cálculos Geométricos</title>
+</head>
+<body>
+
+<h1 class="display-1">Cálculos Geométricos</h1><hr>
+
+<h3>
+  Por trás de todo cálculo
+  <small class="text-muted">existe um programa que o calculou</small>
+</h3>
+
+<br>
+
+<p class="lead">
+  Neste site, é facilitado o acesso a diferentes calculadores de perímetros e áreas de formas geométricas planas.
+</p>
+
+<br>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Quadrado
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>O quadrado é um quadrilátero (quatro lados) regular com lados congruentes (mesma medida) e ângulos internos retos (90°). A soma dos ângulos internos é igual a 360°.</strong>
+          <br>Para calcularmos a área do quadrado, basta apenas pegar um dos lados e elevá-lo a dois <strong>(lado^2)</strong>, resultando na área.
+          <br>O cálculo do perímetro é feito ao se multiplicar por quatro o valor do lado <strong>(lado * 4)</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Triângulo
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Os trapézios são quadriláteros que possuem um par de lados opostos paralelos. Sendo assim, os trapézios herdam todas as características e propriedades fundamentais dos quadriláteros.</strong>
+        <br>Para calcularmos a área do triângulo, basta multiplicar a base pela altura e dividir tudo por dois <strong>((b*h)/2)</strong>, resultando na área.
+        <br>O cálculo do perímetro é feito ao se somar os três lados do triângulo <strong>(lado1 + lado2 + base)</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Trapézio
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Um trapézio é um polígono que possui três lados e que necessariamente é uma figura plana cujos lados são segmentos de reta. Para ser polígono, esses segmentos de reta encontram-se apenas em suas extremidades, formando, assim, três vértices. Além disso, também são encontrados três ângulos internos em qualquer que seja o triângulo..</strong>
+        <br>Para calcularmos a área do triângulo, basta multiplicar a base maior pela menor, depois multiplicar pela altura e dividir tudo por dois <strong>( ((bM*bm)*h)/2 )</strong>, resultando na área.
+        <br>O cálculo do perímetro é feito ao se multiplicar pi por dois e então multiplicar tudo pelo raio <strong>(lado1 + lado2 + base maior + base menor)</strong>.      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Círculo
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Um círculo é um conjunto de pontos resultantes da união de uma circunferência com todos os seus pontos internos. Desse modo, ao preencher uma piscina circular de água, por exemplo, a borda dessa piscina e a superfície da água compõem um círculo.</strong>
+        <br>Para calcularmos a área do círculo, basta multiplicar pi pelo raio ao quadrado <strong>( π*(r^2) )</strong>, resultando na área.
+        <br>O cálculo do perímetro é feito ao se multiplicar pi com 2 e então multiplicar tudo pelo raio <strong>( 2π*r )</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        Retângulo
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>O retângulo é um quadrilátero que possui quatro ângulos retos. É formado por quatro lados, sendo os lados opostos paralelos, o que faz dele ser também um paralelogramo.</strong>
+        <br>Para calcularmos a área do retângulo, basta multiplicar a base pela altura <strong>( b * h )</strong>, resultando na área.
+        <br>O cálculo do perímetro é feito ao se somar todos os lados <strong>( 2b + 2h )</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="card">
+  <h5 class="card-header">Acessando</h5>
+  <div class="card-body">
+    <h5 class="card-title">Clique Abaixo</h5>
+    <p class="card-text">Para facilitar o cálculo da área e perímetro das formas geométricas acima, clique no botão abaixo.</p>
+    <a href="Calculadores.html" class="btn btn-info">Acessar</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
