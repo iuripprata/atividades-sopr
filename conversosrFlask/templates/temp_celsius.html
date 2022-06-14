@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} {{ titulo }} {% endblock %}
+{% block content %}
+    <h1>Hora</h1><hr>
+    <form action="/temperatura/celsius/data/" method="POST">
+        Graus Celsius<input type="text" name="grau"><br><br>
+        <input type="radio" id="fahr" name="tempe" value="Fahrenheits">
+        <label for="fahr">Fahrenheits</label><br>
+        <input type="radio" id="kelv" name="tempe" value="Kelvin">
+        <label for="kelv">Kelvin</label><br><br>
+        <input type="submit" value="Send">
+    </form>
+<br>
+{% endblock %}

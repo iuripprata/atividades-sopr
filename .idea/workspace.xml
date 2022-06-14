@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1432aa2c-eb13-42ec-a0b8-7acbd3425976" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -34,8 +37,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\iurip\Desktop\IFCE\SOPR\atividades-sopr" />
       <recent name="C:\Users\iurip\Desktop\IFCE\SOPR\atividades-sopr\calculador-geometrico" />
+      <recent name="C:\Users\iurip\Desktop\IFCE\SOPR\atividades-sopr" />
       <recent name="C:\Users\iurip\Desktop\IFCE\SOPR\atividades-sopr\outro-projeto" />
     </key>
   </component>

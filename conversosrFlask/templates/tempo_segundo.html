@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} {{ titulo }} {% endblock %}
+{% block content %}
+    <h1>Segundos</h1><hr>
+    <form action="/segundo/data/" method="POST">
+        Segundos<input type="text" name="segundo"><br><br>
+        <input type="radio" id="min" name="temp" value="Minuto">
+        <label for="min">Minuto</label><br>
+        <input type="radio" id="hora" name="temp" value="Hora">
+        <label for="hora">Hora</label><br><br>
+        <input type="submit" value="Send">
+    </form>
+<br>
+{% endblock %}
