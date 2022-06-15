@@ -1,14 +1,13 @@
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, flash, Markup, url_for
 from flask_bootstrap import Bootstrap5
+from flask_wtf import FlaskForm, CSRFProtect
+from wtforms.validators import DataRequired, Length, Regexp
+from wtforms.fields import *
+from flask_bootstrap import Bootstrap5, SwitchField
 
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
-
-
-@app.route("/")
-def index():
-    return redirect("/static/index.html")
 
 @app.route("/hello/")
 @app.route("/hello/<user>/")
