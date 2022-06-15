@@ -53,7 +53,7 @@ def hora_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('tempo_hora.html', titulo='meu form', msg=msg)
 
 @app.route("/tempo/minuto/")
 def min():
@@ -133,6 +133,69 @@ def kelv_data():
         elif tempe == "Celsius":
             kelv_celsius = float(grau - 273)
             msg = "{} in kelvin is {}".format(grau, kelv_celsius)
+        else:
+            msg = "no data received"
+    else:
+        msg = "no data received"
+    return msg
+
+@app.route("/comp/metro/")
+def metro():
+    return render_template('comp_metro.html', titulo='meu form')
+
+@app.route("/comp/metro/data/", methods=['POST'])
+def metro_data():
+    if request.method == 'POST':
+        comp = float(request.form['comp'])
+        opc = request.form['opc']
+        if opc == "Centímetros":
+            met_cm = float(comp  * 100)
+            msg = "{}m in cm is {}".format(comp, met_cm)
+        elif opc == "Quilômetros":
+            met_km = float(comp / 1000)
+            msg = "{}m in km is {}".format(comp, met_km)
+        else:
+            msg = "no data received"
+    else:
+        msg = "no data received"
+    return msg
+
+@app.route("/comp/km/")
+def km():
+    return render_template('comp_km.html', titulo='meu form')
+
+@app.route("/comp/km/data/", methods=['POST'])
+def km_data():
+    if request.method == 'POST':
+        comp = float(request.form['comp'])
+        opc = request.form['opc']
+        if opc == "Centímetros":
+            km_cm = float(comp * 100000)
+            msg = "{}m in cm is {}".format(comp, km_cm)
+        elif opc == "Metros":
+            km_m = float(comp * 1000)
+            msg = "{}m in m is {}".format(comp, km_m)
+        else:
+            msg = "no data received"
+    else:
+        msg = "no data received"
+    return msg
+
+@app.route("/comp/cm/")
+def cm():
+    return render_template('comp_cm.html', titulo='meu form')
+
+@app.route("/comp/cm/data/", methods=['POST'])
+def cm_data():
+    if request.method == 'POST':
+        comp = float(request.form['comp'])
+        opc = request.form['opc']
+        if opc == "Quilômetros":
+            cm_km = float(comp / 100000)
+            msg = "{}m in cm is {}".format(comp, cm_km)
+        elif opc == "Metros":
+            cm_m = float(comp / 1000)
+            msg = "{}m in m is {}".format(comp, cm_m)
         else:
             msg = "no data received"
     else:
