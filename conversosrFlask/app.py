@@ -1,9 +1,6 @@
 from flask import Flask, redirect, render_template, request
-import math
-# To follow the naming rule of Flask extension, although
-# this project's name is Bootstrap-Flask, the actual package
-# installed is named `flask_bootstrap`.
 from flask_bootstrap import Bootstrap5
+
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
@@ -83,7 +80,15 @@ def min_data():
 
 @app.route("/temperatura/celsius/")
 def celsius():
-    return render_template('temp_celsius.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='/temperatura/celsius/data/',
+                           titulo='meu form',
+                           unit='grau',
+                           name='tempe',
+                           value1='Fahrenheits',
+                           value2='Kelvin',
+                           id1='fahr',
+                           id2='kelv',)
 
 @app.route("/temperatura/celsius/data/", methods=['POST'])
 def celsius_data():
@@ -100,7 +105,7 @@ def celsius_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg= msg)
 
 @app.route("/temperatura/fahr/")
 def fahr():
@@ -205,4 +210,4 @@ def cm_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg= msg)

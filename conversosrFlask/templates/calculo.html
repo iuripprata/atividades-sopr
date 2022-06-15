@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} {{ titulo }} {% endblock %}
+{% block content %}
+<h1>Graus Celsius</h1><hr>
+
+<form  action={{link}} method="POST">
+  <div class="row mb-3">
+    <label for={{unit}} class="col-2 col-form-label">Valor</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id={{unit}} name={{unit}}>
+    </div>
+  </div>
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">Converter Para</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name={{name}} id={{id1}} value={{value1}}>
+        <label class="form-check-label" for={{id1}}>
+          {{value1}}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name={{name}} id={{id2}} value={{value2}}>
+        <label class="form-check-label" for={{id2}}>
+          {{value2}}
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form><br>
+
+{% endblock %}
