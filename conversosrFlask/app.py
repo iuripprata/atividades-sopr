@@ -17,7 +17,15 @@ def hello (user=None):
 
 @app.route("/tempo/segundo/")
 def seg():
-    return render_template('tempo_segundo.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/tempo/segundo/data/", methods=['POST'])
 def seg_data():
@@ -38,7 +46,15 @@ def seg_data():
 
 @app.route("/tempo/hora/")
 def hora():
-    return render_template('tempo_hora.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/tempo/hora/data/", methods=['POST'])
 def hora_data():
@@ -59,7 +75,15 @@ def hora_data():
 
 @app.route("/tempo/minuto/")
 def min():
-    return render_template('tempo_minuto.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/tempo/minuto/data/", methods=['POST'])
 def min_data():
@@ -81,14 +105,14 @@ def min_data():
 @app.route("/temperatura/celsius/")
 def celsius():
     return render_template('calculo.html',
-                           link='/temperatura/celsius/data/',
-                           titulo='meu form',
-                           unit='grau',
-                           name='tempe',
-                           value1='Fahrenheits',
-                           value2='Kelvin',
-                           id1='fahr',
-                           id2='kelv',)
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/temperatura/celsius/data/", methods=['POST'])
 def celsius_data():
@@ -109,7 +133,15 @@ def celsius_data():
 
 @app.route("/temperatura/fahr/")
 def fahr():
-    return render_template('temp_fahr.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/temperatura/fahr/data/", methods=['POST'])
 def fahr_data():
@@ -130,7 +162,15 @@ def fahr_data():
 
 @app.route("/temperatura/kelvin/")
 def kelv():
-    return render_template('temp_kelv.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/temperatura/kelvin/data/", methods=['POST'])
 def kelv_data():
@@ -151,7 +191,15 @@ def kelv_data():
 
 @app.route("/comp/metro/")
 def metro():
-    return render_template('comp_metro.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/comp/metro/data/", methods=['POST'])
 def metro_data():
@@ -172,7 +220,15 @@ def metro_data():
 
 @app.route("/comp/km/")
 def km():
-    return render_template('comp_km.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/comp/km/data/", methods=['POST'])
 def km_data():
@@ -193,7 +249,15 @@ def km_data():
 
 @app.route("/comp/cm/")
 def cm():
-    return render_template('comp_cm.html', titulo='meu form')
+    return render_template('calculo.html',
+                           link='',
+                           titulo='',
+                           unit='',
+                           name='',
+                           value1='',
+                           value2='',
+                           id1='',
+                           id2='',)
 
 @app.route("/comp/cm/data/", methods=['POST'])
 def cm_data():
