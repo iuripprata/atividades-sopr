@@ -9,6 +9,10 @@ from flask_bootstrap import Bootstrap5, SwitchField
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
+@app.route("/")
+def index():
+    return redirect("/static/index.html")
+
 @app.route("/hello/")
 @app.route("/hello/<user>/")
 def hello (user=None):
@@ -17,24 +21,24 @@ def hello (user=None):
 @app.route("/tempo/segundo/")
 def seg():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/tempo/segundo/data/',
+                           titulo='Conversor de Segundos',
+                           unit='segundo',
+                           name='temp',
+                           value1='Minutos',
+                           value2='Horas',
+                           id1='min',
+                           id2='hr',)
 
 @app.route("/tempo/segundo/data/", methods=['POST'])
 def seg_data():
     if request.method == 'POST':
         segundo = float(request.form['segundo'])
         temp = request.form['temp']
-        if temp == "Minuto":
+        if temp == "Minutos":
             seg_minuto = float(segundo / 60)
             msg = "{} in hours is {}".format(segundo, seg_minuto)
-        elif temp == "Hora":
+        elif temp == "Horas":
             seg_hora = float(segundo / 3600)
             msg = "{} in hours is {}".format(segundo, seg_hora)
         else:
@@ -46,24 +50,24 @@ def seg_data():
 @app.route("/tempo/hora/")
 def hora():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/tempo/hora/data/',
+                           titulo='Conversor de Horas',
+                           unit='hora',
+                           name='temp',
+                           value1='Minutos',
+                           value2='Segundos',
+                           id1='min',
+                           id2='seg',)
 
 @app.route("/tempo/hora/data/", methods=['POST'])
 def hora_data():
     if request.method == 'POST':
         hora = float(request.form['hora'])
         temp = request.form['temp']
-        if temp == "Minuto":
+        if temp == "Minutos":
             hora_minuto = float(hora * 60)
             msg = "{} in hours is {}".format(hora, hora_minuto)
-        elif temp == "Segundo":
+        elif temp == "Segundos":
             hora_segundo = float(hora * 3600)
             msg = "{} in hours is {}".format(hora, hora_segundo)
         else:
@@ -75,24 +79,24 @@ def hora_data():
 @app.route("/tempo/minuto/")
 def min():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/tempo/minuto/data/',
+                           titulo='Conversor de Minutos',
+                           unit='minuto',
+                           name='temp',
+                           value1='Horas',
+                           value2='Segundos',
+                           id1='hr',
+                           id2='seg',)
 
 @app.route("/tempo/minuto/data/", methods=['POST'])
 def min_data():
     if request.method == 'POST':
         minuto = float(request.form['minuto'])
         temp = request.form['temp']
-        if temp == "Hora":
+        if temp == "Horas":
             minuto_hora = float(minuto / 60)
             msg = "{} in hours is {}".format(minuto, minuto_hora)
-        elif temp == "Segundo":
+        elif temp == "Segundos":
             minuto_segundo = float(minuto * 60)
             msg = "{} in hours is {}".format(minuto, minuto_segundo)
         else:
@@ -104,14 +108,14 @@ def min_data():
 @app.route("/temperatura/celsius/")
 def celsius():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/temperatura/celsius/data/',
+                           titulo='Conversor de',
+                           unit='grau',
+                           name='tempe',
+                           value1='Fahrenheits',
+                           value2='Kelvin',
+                           id1='fahr',
+                           id2='kelv',)
 
 @app.route("/temperatura/celsius/data/", methods=['POST'])
 def celsius_data():
@@ -133,14 +137,14 @@ def celsius_data():
 @app.route("/temperatura/fahr/")
 def fahr():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/temperatura/fahr/data/',
+                           titulo='Conversor de Fahrenheits',
+                           unit='grau',
+                           name='tempe',
+                           value1='Celsius',
+                           value2='Kelvin',
+                           id1='celsiu',
+                           id2='kelv',)
 
 @app.route("/temperatura/fahr/data/", methods=['POST'])
 def fahr_data():
@@ -162,14 +166,14 @@ def fahr_data():
 @app.route("/temperatura/kelvin/")
 def kelv():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/temperatura/kelvin/data/',
+                           titulo='Conversor de Kelvin',
+                           unit='grau',
+                           name='tempe',
+                           value1='Fahrenheits',
+                           value2='Celsius',
+                           id1='fahr',
+                           id2='celsiu',)
 
 @app.route("/temperatura/kelvin/data/", methods=['POST'])
 def kelv_data():
@@ -191,14 +195,14 @@ def kelv_data():
 @app.route("/comp/metro/")
 def metro():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/comp/metro/data/',
+                           titulo='Conversor de metros',
+                           unit='comp',
+                           name='opc',
+                           value1='Centímetros',
+                           value2='Quilômetros',
+                           id1='cm',
+                           id2='km',)
 
 @app.route("/comp/metro/data/", methods=['POST'])
 def metro_data():
@@ -220,14 +224,14 @@ def metro_data():
 @app.route("/comp/km/")
 def km():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/comp/km/data/',
+                           titulo='Conversor de Quilômetros',
+                           unit='comp',
+                           name='opc',
+                           value1='Centímetros',
+                           value2='Metros',
+                           id1='cm',
+                           id2='m',)
 
 @app.route("/comp/km/data/", methods=['POST'])
 def km_data():
@@ -249,14 +253,14 @@ def km_data():
 @app.route("/comp/cm/")
 def cm():
     return render_template('calculo.html',
-                           link='',
-                           titulo='',
-                           unit='',
-                           name='',
-                           value1='',
-                           value2='',
-                           id1='',
-                           id2='',)
+                           link='/comp/cm/data/',
+                           titulo='Conversor de Centímetros',
+                           unit='comp',
+                           name='opc',
+                           value1='Quilômetros',
+                           value2='Metros',
+                           id1='km',
+                           id2='m',)
 
 @app.route("/comp/cm/data/", methods=['POST'])
 def cm_data():
