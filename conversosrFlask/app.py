@@ -45,7 +45,7 @@ def seg_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/segundo/')
 
 @app.route("/tempo/hora/")
 def hora():
@@ -74,7 +74,7 @@ def hora_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('tempo_hora.html', titulo='meu form', msg=msg)
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/hora/')
 
 @app.route("/tempo/minuto/")
 def min():
@@ -103,7 +103,7 @@ def min_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/minuto/')
 
 @app.route("/temperatura/celsius/")
 def celsius():
@@ -132,7 +132,7 @@ def celsius_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg= msg)
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/celsius/')
 
 @app.route("/temperatura/fahr/")
 def fahr():
@@ -161,7 +161,7 @@ def fahr_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/fahr/')
 
 @app.route("/temperatura/kelvin/")
 def kelv():
@@ -190,7 +190,7 @@ def kelv_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/kelvin/')
 
 @app.route("/comp/metro/")
 def metro():
@@ -219,7 +219,7 @@ def metro_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/metro/')
 
 @app.route("/comp/km/")
 def km():
@@ -248,7 +248,7 @@ def km_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return msg
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/km/')
 
 @app.route("/comp/cm/")
 def cm():
@@ -277,4 +277,4 @@ def cm_data():
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg= msg)
+    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/cm/')
