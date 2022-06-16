@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% block title %} {{ titulo }} {% endblock %}
 {% block content %}
-    <h1>{{ msg }}</h1>
+    <div class="text-center d-grid gap-2 col-6 mx-auto">
+        <br><br>
+        <h1 class="display-2">Resultado</h1>
+        <hr>
+        <h3>{{ msg }}</h3>
+    </div>
+
     <br>
-    <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="d-grid gap-2 col-3 mx-auto">
       <a href={{voltar}} class="btn btn-primary">Voltar</a>
     </div>
+    <br>
 {% endblock %}

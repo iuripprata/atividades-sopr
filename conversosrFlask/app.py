@@ -37,15 +37,15 @@ def seg_data():
         temp = request.form['temp']
         if temp == "Minutos":
             seg_minuto = float(segundo / 60)
-            msg = "{} in hours is {}".format(segundo, seg_minuto)
+            msg = "{} seg em minutos é {} min".format(segundo, seg_minuto)
         elif temp == "Horas":
             seg_hora = float(segundo / 3600)
-            msg = "{} in hours is {}".format(segundo, seg_hora)
+            msg = "{} seg em horas é {} hr".format(segundo, seg_hora)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/segundo/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/tempo/segundo/')
 
 @app.route("/tempo/hora/")
 def hora():
@@ -66,15 +66,15 @@ def hora_data():
         temp = request.form['temp']
         if temp == "Minutos":
             hora_minuto = float(hora * 60)
-            msg = "{} in hours is {}".format(hora, hora_minuto)
+            msg = "{} hr em minutos é {} min".format(hora, hora_minuto)
         elif temp == "Segundos":
             hora_segundo = float(hora * 3600)
-            msg = "{} in hours is {}".format(hora, hora_segundo)
+            msg = "{} hr em segundos é {} seg".format(hora, hora_segundo)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/hora/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/tempo/hora/')
 
 @app.route("/tempo/minuto/")
 def min():
@@ -95,15 +95,15 @@ def min_data():
         temp = request.form['temp']
         if temp == "Horas":
             minuto_hora = float(minuto / 60)
-            msg = "{} in hours is {}".format(minuto, minuto_hora)
+            msg = "{} min em horas é {} hr".format(minuto, minuto_hora)
         elif temp == "Segundos":
             minuto_segundo = float(minuto * 60)
-            msg = "{} in hours is {}".format(minuto, minuto_segundo)
+            msg = "{} min em segundos é {} seg".format(minuto, minuto_segundo)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/tempo/minuto/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/tempo/minuto/')
 
 @app.route("/temperatura/celsius/")
 def celsius():
@@ -124,15 +124,15 @@ def celsius_data():
         tempe = request.form['tempe']
         if tempe == "Fahrenheits":
             celsius_fahr = float(grau * 1.8 + 32)
-            msg = "{} in fahrenheits is {}".format(grau, celsius_fahr)
+            msg = "{}°C em fahrenheits é {}°F".format(grau, celsius_fahr)
         elif tempe == "Kelvin":
             celsius_kelv = float(grau + 273)
-            msg = "{} in kelvin is {}".format(grau, celsius_kelv)
+            msg = "{}°C em kelvin é {}°K".format(grau, celsius_kelv)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/celsius/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/temperatura/celsius/')
 
 @app.route("/temperatura/fahr/")
 def fahr():
@@ -153,15 +153,15 @@ def fahr_data():
         tempe = request.form['tempe']
         if tempe == "Celsius":
             fahr_celsius = float((grau - 32) * (5/9))
-            msg = "{} in celsius is {}".format(grau, fahr_celsius)
+            msg = "{}°F em kelvin é {}°C".format(grau, fahr_celsius)
         elif tempe == "Kelvin":
             fahr_kelv = float((grau - 32) * (5/9) + 273)
-            msg = "{} in kelvin is {}".format(grau, fahr_kelv)
+            msg = "{}°F em kelvin é {}°K".format(grau, fahr_kelv)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/fahr/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/temperatura/fahr/')
 
 @app.route("/temperatura/kelvin/")
 def kelv():
@@ -182,15 +182,15 @@ def kelv_data():
         tempe = request.form['tempe']
         if tempe == "Fahrenheits":
             kelv_fahr = float((grau - 273) * (9/5) + 32)
-            msg = "{} in fahrenheits is {}".format(grau, kelv_fahr)
+            msg = "{}°K em fahrenheits é {}°F".format(grau, kelv_fahr)
         elif tempe == "Celsius":
             kelv_celsius = float(grau - 273)
-            msg = "{} in kelvin is {}".format(grau, kelv_celsius)
+            msg = "{}°K em celsius é {}°C".format(grau, kelv_celsius)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/temperatura/kelvin/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/temperatura/kelvin/')
 
 @app.route("/comp/metro/")
 def metro():
@@ -211,15 +211,17 @@ def metro_data():
         opc = request.form['opc']
         if opc == "Centímetros":
             met_cm = float(comp  * 100)
-            msg = "{}m in cm is {}".format(comp, met_cm)
+            msg = "{}m em cm é {}".format(comp, met_cm)
         elif opc == "Quilômetros":
             met_km = float(comp / 1000)
-            msg = "{}m in km is {}".format(comp, met_km)
+            msg = "{}m em km é {}".format(comp, met_km)
         else:
-            msg = "no data received"
+            msg = "Faltam Dados"
+            return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/comp/metro/')
     else:
-        msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/metro/')
+        msg = "Faltam Dados"
+        return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/comp/metro/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/comp/metro/')
 
 @app.route("/comp/km/")
 def km():
@@ -240,15 +242,15 @@ def km_data():
         opc = request.form['opc']
         if opc == "Centímetros":
             km_cm = float(comp * 100000)
-            msg = "{}m in cm is {}".format(comp, km_cm)
+            msg = "{}m em cm é {}".format(comp, km_cm)
         elif opc == "Metros":
             km_m = float(comp * 1000)
-            msg = "{}m in m is {}".format(comp, km_m)
+            msg = "{}m em m é {}".format(comp, km_m)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/km/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/comp/km/')
 
 @app.route("/comp/cm/")
 def cm():
@@ -269,12 +271,12 @@ def cm_data():
         opc = request.form['opc']
         if opc == "Quilômetros":
             cm_km = float(comp / 100000)
-            msg = "{}m in cm is {}".format(comp, cm_km)
+            msg = "{}m em km é {}".format(comp, cm_km)
         elif opc == "Metros":
             cm_m = float(comp / 1000)
-            msg = "{}m in m is {}".format(comp, cm_m)
+            msg = "{}m em m é {}".format(comp, cm_m)
         else:
             msg = "no data received"
     else:
         msg = "no data received"
-    return render_template('resultados.html', titulo='meu form', msg=msg, voltar='/comp/cm/')
+    return render_template('resultados.html', titulo='RESULTADO', msg=msg, voltar='/comp/cm/')

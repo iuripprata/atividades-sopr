@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block title %} {{ titulo }} {% endblock %}
 {% block content %}
-<h1>{{ titulo }}</h1><hr>
+
+<div class="text-center d-grid gap-2 col-6 mx-auto">
+  <h1 class="display-2">{{ titulo }}</h1>
+</div>
+
 
 <form  action={{link}} method="POST">
   <div class="d-grid gap-2 col-6 mx-auto">
@@ -10,6 +14,7 @@
       <input type="text" class="form-control" id={{unit}} name={{unit}}>
     </div>
   </div><br>
+
   <fieldset class="row mb-3">
     <div class="d-grid gap-2 col-6 mx-auto">
       <legend class="col-form-label col-sm-2 pt-0">Converter Para</legend>
@@ -27,10 +32,10 @@
       </div>
     </div>
   </fieldset>
+  <br>
   <div class="d-grid gap-2 col-6 mx-auto">
-    <button type="submit" class="btn btn-warning">Enviar</button>
+    <button type="submit" class="btn btn-success">Enviar</button>
   </div>
-
 </form><br>
 
 <div class="d-grid gap-2 col-6 mx-auto">
