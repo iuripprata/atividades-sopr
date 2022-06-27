@@ -13,11 +13,6 @@ bootstrap = Bootstrap5(app)
 def index():
     return redirect("/static/index.html")
 
-@app.route("/hello/")
-@app.route("/hello/<user>/")
-def hello (user=None):
-    return render_template('hello.html', name=user)
-
 @app.route("/tempo/segundo/")
 def seg():
     return render_template('calculo.html',
@@ -109,7 +104,7 @@ def min_data():
 def celsius():
     return render_template('calculo.html',
                            link='/temperatura/celsius/data/',
-                           titulo='Conversor de',
+                           titulo='Conversor de Celsius',
                            unit='grau',
                            name='tempe',
                            value1='Fahrenheits',
@@ -196,7 +191,7 @@ def kelv_data():
 def metro():
     return render_template('calculo.html',
                            link='/comp/metro/data/',
-                           titulo='Conversor de metros',
+                           titulo='Conversor de Metros',
                            unit='comp',
                            name='opc',
                            value1='Centímetros',
