@@ -11,10 +11,17 @@ def send_welcome(message):
 	bot.reply_to(message, "Howdy, how are you doing?")
 
 
-@bot.message_handler(commands=['bellabunda'])
+@bot.message_handler(commands=['blake'])
 def sendphoto(message):
-    bot.send_photo(message.chat.id, open('Blake V4 - A.png', 'rb'), caption="puta")
+    bot.send_photo(message.chat.id, open('Blake V4 - A.png', 'rb'),
+                   caption="*Blake Belladonna*\n"
+                           "Raridade: A \n"
+                           "Filiação: Beacon Academy \n"
+                           "Time: RWBY \n"
+                           "Origem: Menágerie \n"
+                           "Raça: Fauno \n",
+                   parse_mode='MarkdownV2')
 
 
-bot.polling(none_stop=True, timeout=20)
+bot.polling(none_stop=True, timeout=60)
 
