@@ -3,7 +3,7 @@ from telebot import types
 from random import choice
 
 
-TOKEN = '5415027263:AAGtaqQSPtsCeJAPVYfCwcbDyeJM35tT78k'
+TOKEN = ''
 tb = telebot.TeleBot(TOKEN)
 bot = telebot.TeleBot("5415027263:AAGtaqQSPtsCeJAPVYfCwcbDyeJM35tT78k") # You can set parse_mode by default. HTML or MARKDOWN
 
